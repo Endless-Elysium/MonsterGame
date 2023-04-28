@@ -75,5 +75,13 @@
             }
             return Input;
         }
+
+        static public void DrawArea()
+        {
+            Console.WriteLine(Program.Fields.CurrentArea.Name);
+            Console.WriteLine(Program.Fields.CurrentArea.ID);
+            Console.WriteLine(Program.Fields.CurrentArea.Foes[0]);
+            Console.WriteLine(Program.Fields.CurrentArea.NextAreas[0]);
+        }
     }
 }
