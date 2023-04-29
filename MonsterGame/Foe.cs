@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MonsterGame
 {
-    public class Area
+    internal class Foe
     {
         protected internal string Name { get; set; }
         protected internal int ID { get; set; }
-        protected internal int AreaType { get; set; }
-        protected internal int[] Foes { get; set; }
-        protected internal int[] NextAreas { get; set; }
+        protected internal int HP { get; set; }
+        protected internal int ATK { get; set; }
+        protected internal int SPE { get; set; }
+
     }
 }

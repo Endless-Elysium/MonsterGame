@@ -7,12 +7,12 @@
         {
             
             Console.WriteLine("-Monster stats-");
-            Console.WriteLine("Name: " + Program.Monsters.CurrentMonster.Name);
-            Console.WriteLine("Stage: " + Program.Monsters.CurrentMonster.Stage + " " + UI.StageNames[Program.Monsters.CurrentMonster.Stage]);
-            Console.WriteLine("HP: " + Program.Monsters.CurrentMonster.MaxHP);
-            Console.WriteLine("ATK: " + Program.Monsters.CurrentMonster.Atk);
-            Console.WriteLine("DEF: " + Program.Monsters.CurrentMonster.Def);
-            Console.WriteLine("SPE: " + Program.Monsters.CurrentMonster.Spe);
+            Console.WriteLine("Name: " + Program.PMonsters.CurrentMonster.Name);
+            Console.WriteLine("Stage: " + Program.PMonsters.CurrentMonster.Stage + " " + UI.StageNames[Program.PMonsters.CurrentMonster.Stage]);
+            Console.WriteLine("HP: " + Program.PMonsters.CurrentMonster.MaxHP);
+            Console.WriteLine("ATK: " + Program.PMonsters.CurrentMonster.Atk);
+            Console.WriteLine("DEF: " + Program.PMonsters.CurrentMonster.Def);
+            Console.WriteLine("SPE: " + Program.PMonsters.CurrentMonster.Spe);
             Console.WriteLine("Possible Evolves: null, to be added");
         }
         public void DrawBattle()
@@ -24,39 +24,43 @@
             int[] Id = {id1, id2, id3 };
             int result = -1;
             Console.WriteLine("!!!!!!!");
-            Console.WriteLine(Program.Monsters.CurrentMonster.Name + " wants to evolve!!");
+            Console.WriteLine(Program.PMonsters.CurrentMonster.Name + " wants to evolve!!");
             Console.WriteLine("What should it evolve into?");
             if (id1 != -1)
             {
-                Console.WriteLine("1. " + Program.Monsters.monstersList[Id[0]].Name);
-                Console.WriteLine("   OldHP: " + Program.Monsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.Monsters.monstersList[Id[0]].MaxHP);
-                Console.WriteLine("   OldATK: " + Program.Monsters.CurrentMonster.Atk + " >>> NewATK: " + Program.Monsters.monstersList[Id[0]].Atk);
-                Console.WriteLine("   OldDEF: " + Program.Monsters.CurrentMonster.Def + " >>> NewDEF: " + Program.Monsters.monstersList[Id[0]].Def);
-                Console.WriteLine("   OldSPE: " + Program.Monsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.Monsters.monstersList[Id[0]].Spe);
+                Console.WriteLine("1. " + Program.PMonsters.monstersList[Id[0]].Name);
+                Console.WriteLine("   OldHP: " + Program.PMonsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.PMonsters.monstersList[Id[0]].MaxHP);
+                Console.WriteLine("   OldATK: " + Program.PMonsters.CurrentMonster.Atk + " >>> NewATK: " + Program.PMonsters.monstersList[Id[0]].Atk);
+                Console.WriteLine("   OldDEF: " + Program.PMonsters.CurrentMonster.Def + " >>> NewDEF: " + Program.PMonsters.monstersList[Id[0]].Def);
+                Console.WriteLine("   OldSPE: " + Program.PMonsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.PMonsters.monstersList[Id[0]].Spe);
             }
             if (id2 != -1)
             {
-                Console.WriteLine("2. " + Program.Monsters.monstersList[Id[1]].Name);
-                Console.WriteLine("   OldHP: " + Program.Monsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.Monsters.monstersList[Id[1]].MaxHP);
-                Console.WriteLine("   OldATK: " + Program.Monsters.CurrentMonster.Atk + " >>> NewATK: " + Program.Monsters.monstersList[Id[1]].Atk);
-                Console.WriteLine("   OldDEF: " + Program.Monsters.CurrentMonster.Def + " >>> NewDEF: " + Program.Monsters.monstersList[Id[1]].Def);
-                Console.WriteLine("   OldSPE: " + Program.Monsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.Monsters.monstersList[Id[1]].Spe);
+                Console.WriteLine("2. " + Program.PMonsters.monstersList[Id[1]].Name);
+                Console.WriteLine("   OldHP: " + Program.PMonsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.PMonsters.monstersList[Id[1]].MaxHP);
+                Console.WriteLine("   OldATK: " + Program.PMonsters.CurrentMonster.Atk + " >>> NewATK: " + Program.PMonsters.monstersList[Id[1]].Atk);
+                Console.WriteLine("   OldDEF: " + Program.PMonsters.CurrentMonster.Def + " >>> NewDEF: " + Program.PMonsters.monstersList[Id[1]].Def);
+                Console.WriteLine("   OldSPE: " + Program.PMonsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.PMonsters.monstersList[Id[1]].Spe);
             }
             if (id3 != -1)
             {
-                Console.WriteLine("3. " + Program.Monsters.monstersList[Id[2]].Name);
-                Console.WriteLine("   OldHP: " + Program.Monsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.Monsters.monstersList[Id[2]].MaxHP);
-                Console.WriteLine("   OldATK: " + Program.Monsters.CurrentMonster.Atk + " >>> NewATK: " + Program.Monsters.monstersList[Id[2]].Atk);
-                Console.WriteLine("   OldDEF: " + Program.Monsters.CurrentMonster.Def + " >>> NewDEF: " + Program.Monsters.monstersList[Id[2]].Def);
-                Console.WriteLine("   OldSPE: " + Program.Monsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.Monsters.monstersList[Id[2]].Spe);
+                Console.WriteLine("3. " + Program.PMonsters.monstersList[Id[2]].Name);
+                Console.WriteLine("   OldHP: " + Program.PMonsters.CurrentMonster.MaxHP + " >>> NewHP: " + Program.PMonsters.monstersList[Id[2]].MaxHP);
+                Console.WriteLine("   OldATK: " + Program.PMonsters.CurrentMonster.Atk + " >>> NewATK: " + Program.PMonsters.monstersList[Id[2]].Atk);
+                Console.WriteLine("   OldDEF: " + Program.PMonsters.CurrentMonster.Def + " >>> NewDEF: " + Program.PMonsters.monstersList[Id[2]].Def);
+                Console.WriteLine("   OldSPE: " + Program.PMonsters.CurrentMonster.Spe + " >>> NewSPE: " + Program.PMonsters.monstersList[Id[2]].Spe);
             }
             int Input = -1;
             while (Input == -1)
             {
                 Input = IntPlayerInput();
             }
+            if (Input > 3) 
+            {
+                Input = 3;
+            }
             result = Id[Input - 1];
-            Console.WriteLine("You picked " + Program.Monsters.monstersList[Id[Input - 1]].Name);
+            Console.WriteLine("You picked " + Program.PMonsters.monstersList[Id[Input - 1]].Name);
             return result;
         }
         static int IntPlayerInput()
@@ -78,10 +82,32 @@
 
         static public void DrawArea()
         {
-            Console.WriteLine(Program.Fields.CurrentArea.Name);
-            Console.WriteLine(Program.Fields.CurrentArea.ID);
-            Console.WriteLine(Program.Fields.CurrentArea.Foes[0]);
-            Console.WriteLine(Program.Fields.CurrentArea.NextAreas[0]);
+            Console.WriteLine(Program.Pfield.CurrentArea.Name);
+            Console.WriteLine(Program.Pfield.CurrentArea.ID);
+            Console.WriteLine(Program.Pfield.CurrentArea.Foes[0]);
+            Console.WriteLine(Program.Pfield.CurrentArea.NextAreas[0]);
+        }
+        static public int DrawMoveArea(Area area, List<Area> fields)
+        {
+            Console.WriteLine("Where would you like to move to?");
+            if (area == null)
+            {
+                area = Program.Pfield.UpdateArea();
+            }
+            for (int i = 0; i < area.NextAreas.Length; i++)
+            {
+                Console.WriteLine("    " + (i + 1) + ". " + fields[area.NextAreas[i]].Name);
+            }
+            int Input = -1;
+            while (Input == -1)
+            {
+                Input = IntPlayerInput();
+            }
+            if (Input > area.NextAreas.Length)
+            {
+                Input = area.NextAreas.Length;
+            }
+            return Input - 1;
         }
     }
 }
