@@ -15,10 +15,6 @@
             Console.WriteLine("SPE: " + Program.PMonsters.CurrentMonster.Spe);
             Console.WriteLine("Possible Evolves: null, to be added");
         }
-        public void DrawBattle()
-        {
-
-        }
         static public int DrawEvo(int id1, int id2, int id3)
         {
             int[] Id = {id1, id2, id3 };
@@ -79,21 +75,31 @@
             }
             return Input;
         }
-
+        static string StringPlayerInput()
+        {
+            string Input = "";
+            try
+            {
+                while (Input == "")
+                {
+                    Input = Console.ReadLine();
+                }
+            } catch(Exception)
+            {
+                Console.WriteLine("Enter something");
+                return "";
+            }
+            return Input;
+        }
         static public void DrawArea()
         {
             Console.WriteLine(Program.Pfield.CurrentArea.Name);
             Console.WriteLine(Program.Pfield.CurrentArea.ID);
-            Console.WriteLine(Program.Pfield.CurrentArea.Foes[0]);
             Console.WriteLine(Program.Pfield.CurrentArea.NextAreas[0]);
         }
         static public int DrawMoveArea(Area area, List<Area> fields)
         {
             Console.WriteLine("Where would you like to move to?");
-            if (area == null)
-            {
-                area = Program.Pfield.UpdateArea();
-            }
             for (int i = 0; i < area.NextAreas.Length; i++)
             {
                 Console.WriteLine("    " + (i + 1) + ". " + fields[area.NextAreas[i]].Name);
@@ -108,6 +114,54 @@
                 Input = area.NextAreas.Length;
             }
             return Input - 1;
+        }
+        static public int DrawLeaveCave()
+        {
+            Console.WriteLine("Leave? Y/N");
+            string input = "";
+            while (input == "") {
+                input = StringPlayerInput();
+            }
+            input = input.ToLower();
+            if (input == "y")
+            {
+                return 1;
+            }
+            return 0;
+        }
+        static public int DrawMoveCaveSubArea(Area area, List<Area> Caves)
+        {
+            Console.WriteLine("Where would you like to move to?");
+            for (int i = 0; i < area.NextAreas.Length; i++)
+            {
+                Console.WriteLine("    " + (i + 1) + ". " + Caves[area.NextAreas[i]].Name);
+            }
+            int Input = -1;
+            while (Input == -1)
+            {
+                Input = IntPlayerInput();
+            }
+            if (Input > area.NextAreas.Length)
+            {
+                Input = area.NextAreas.Length;
+            }
+            return Input - 1;
+        }
+        static public int DrawBattle()
+        {
+            Console.WriteLine("What whould you like to do?");
+            Console.WriteLine("1. Attack");
+            Console.WriteLine("2. Defend");
+            int Input = -1;
+            while (Input == -1)
+            {
+                Input = IntPlayerInput();
+            }
+            if (Input > 2)
+            {
+                Input = 2;
+            }
+            return Input;
         }
     }
 }

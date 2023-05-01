@@ -11,7 +11,6 @@ namespace MonsterGame
         protected internal string Name { get; set; }
         protected internal int ID { get; set; }
         protected internal int AreaType { get; set; }
-        protected internal int[] Foes { get; set; }
         protected internal int[] NextAreas { get; set; }
     }
 }

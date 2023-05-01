@@ -8,6 +8,11 @@ namespace MonsterGame
 {
     internal class Monsters : Monster
     {
+        static public int PlayerHP;
+        static public int PlayerATK;
+        static public int PlayerDEF;
+        static public int PlayerSPE;
+
         readonly public List<Monster> monstersList = new List<Monster>
         {
             new Monster {Name = "DinoFlare", Id  = 0, Stage = 1, MaxHP = 18, Def = 8, Atk = 11, Spe = 8},
@@ -91,6 +96,10 @@ namespace MonsterGame
                     CurrentMonster = monstersList[UI.DrawEvo(19, -1, -1)]; // KightDragon
                     break;
             }
+            PlayerHP = CurrentMonster.MaxHP;
+            PlayerATK = CurrentMonster.Atk;
+            PlayerDEF = CurrentMonster.Def;
+            PlayerSPE = CurrentMonster.Spe;
         }
     }
 }
